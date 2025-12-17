@@ -1,0 +1,90 @@
+Metadata-Version: 2.4
+Name: jsonl-viewer
+Version: 0.1.0
+Summary: A CLI tool to view and analyze JSONL files (especially Claude Code logs)
+Author-email: Your Name <you@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/jsonl-viewer
+Keywords: jsonl,cli,viewer,claude
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# JSONL Viewer (jv)
+
+一个命令行工具，用于查看和分析 JSONL 文件，特别支持 Claude Code 日志分析。
+
+## 安装
+
+```bash
+# 开发模式安装（推荐，方便修改）
+pip install -e .
+
+# 或者直接安装
+pip install .
+```
+
+## 使用方法
+
+安装后可以使用 `jv` 或 `jsonl-view` 命令：
+
+```bash
+# 查看文件摘要
+jv file.jsonl
+
+# 查看指定行（美化输出）
+jv file.jsonl -l 5
+
+# 按类型筛选
+jv file.jsonl -t assistant
+jv file.jsonl -t result
+
+# 只显示特定字段
+jv file.jsonl -k type,model
+jv file.jsonl -k message.usage.input_tokens
+
+# 深度分析 Claude Code 日志
+jv claude-code.txt --analyze
+
+# 截断长输出
+jv file.jsonl -l 5 --truncate 500
+```
+
+## 功能特点
+
+- ✅ 自动美化 JSON 输出
+- ✅ 支持按类型筛选
+- ✅ 支持查看指定行
+- ✅ 支持提取嵌套字段
+- ✅ Claude Code 日志深度分析
+- ✅ 错误行提示
+- ✅ 中文友好
+
+## Claude Code 日志分析
+
+使用 `--analyze` 参数可以自动分析 Claude Code 的会话日志：
+
+```bash
+jv claude-code.txt --analyze
+```
+
+会显示：
+- 会话信息（模型、版本、工作目录）
+- 执行结果（状态、耗时、花费）
+- Token 使用统计
+- 工具调用统计
+- 错误信息
+- 模型思考过程
+
+## License
+
+MIT

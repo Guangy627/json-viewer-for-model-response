@@ -1,0 +1,3 @@
+[console_scripts]
+jsonl-view = jsonl_viewer.cli:main
+jv = jsonl_viewer.cli:main

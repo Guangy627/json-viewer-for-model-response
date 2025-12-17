@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/jsonl_viewer/__init__.py
+src/jsonl_viewer/cli.py
+src/jsonl_viewer.egg-info/PKG-INFO
+src/jsonl_viewer.egg-info/SOURCES.txt
+src/jsonl_viewer.egg-info/dependency_links.txt
+src/jsonl_viewer.egg-info/entry_points.txt
+src/jsonl_viewer.egg-info/top_level.txt
